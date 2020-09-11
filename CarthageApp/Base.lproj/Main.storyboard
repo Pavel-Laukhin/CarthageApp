@@ -91,6 +91,7 @@
                     <navigationItem key="navigationItem" id="Jtp-Vn-xba"/>
                     <connections>
                         <outlet property="gitHubLogo" destination="lQW-Pa-dYG" id="dYp-l1-aHh"/>
+                        <outlet property="signInButton" destination="ELa-Uv-wp9" id="X8l-W1-tux"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
