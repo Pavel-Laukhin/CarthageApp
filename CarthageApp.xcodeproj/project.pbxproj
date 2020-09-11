@@ -13,7 +13,23 @@
 		E9298F64250B8D4E00CE1252 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9298F62250B8D4E00CE1252 /* Main.storyboard */; };
 		E9298F66250B8D5200CE1252 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9298F65250B8D5200CE1252 /* Assets.xcassets */; };
 		E9298F69250B8D5200CE1252 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9298F67250B8D5200CE1252 /* LaunchScreen.storyboard */; };
+		E9298F72250B967900CE1252 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9298F71250B967900CE1252 /* Kingfisher.framework */; };
+		E9298F73250B967900CE1252 /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E9298F71250B967900CE1252 /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E9298F74250B967900CE1252 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E9298F73250B967900CE1252 /* Kingfisher.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E9298F59250B8D4E00CE1252 /* CarthageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarthageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +40,7 @@
 		E9298F65250B8D5200CE1252 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9298F68250B8D5200CE1252 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E9298F6A250B8D5200CE1252 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9298F71250B967900CE1252 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9298F72250B967900CE1252 /* Kingfisher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +60,7 @@
 			children = (
 				E9298F5B250B8D4E00CE1252 /* CarthageApp */,
 				E9298F5A250B8D4E00CE1252 /* Products */,
+				E9298F70250B967900CE1252 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +86,14 @@
 			path = CarthageApp;
 			sourceTree = "<group>";
 		};
+		E9298F70250B967900CE1252 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9298F71250B967900CE1252 /* Kingfisher.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,6 +104,8 @@
 				E9298F55250B8D4D00CE1252 /* Sources */,
 				E9298F56250B8D4D00CE1252 /* Frameworks */,
 				E9298F57250B8D4D00CE1252 /* Resources */,
+				E9298F74250B967900CE1252 /* Embed Frameworks */,
+				E9298F75250B969000CE1252 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -132,6 +161,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E9298F75250B969000CE1252 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Kingfisher.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E9298F55250B8D4D00CE1252 /* Sources */ = {
@@ -286,6 +337,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 367WY2VQ82;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CarthageApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -304,6 +359,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 367WY2VQ82;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CarthageApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
